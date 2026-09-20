@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Mplus Training Studio | Koşuyolu, Kadıköy Kişisel Antrenörlük &amp; Pilates</title>
+<meta name="description" content="Koşuyolu, Kadıköy'de kişisel antrenörlük, pilates, fonksiyonel ve kardiyo antrenman. Program kişiye göre hazırlanır. WhatsApp'tan randevu alın.">
+<meta name="theme-color" content="#0d0e12">
+
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700;1,400&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { overscroll-behavior: none; margin: 0; }
+  ::-webkit-scrollbar { display: none; }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+
+  /* Motion: transform / color only, ease-out. */
+  .fx {
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .press:active { transform: scale(0.98); }
+  a:active, button:active { opacity: 0.9; }
+
+  /* Keyboard focus, everywhere */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #ffb5a0;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Skip link */
+  .skip { position: absolute; left: 16px; top: -64px; z-index: 100; padding: 8px 16px; background: #ff5722; color: #0d0e12; font: 800 0.75rem/1.2 Montserrat, sans-serif; letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; }
+  .skip:focus-visible { top: 16px; }
+
+  /* Header nav current state (set by scroll-spy) */
+  .nav-link[aria-current="page"] { color: #ff5722; }
+
+  /* Mobile menu panel */
+  .menu-panel { opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 200ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 200ms; }
+  .menu-panel.is-open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    .press:active { transform: none; }
+  }
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-secondary-container": "#b1b4c3",
+        "surface-container-low": "#1a1b20",
+        "on-primary-container": "#541200",
+        "on-surface": "#e3e2e7",
+        "secondary-container": "#434653",
+        "outline": "#ab8980",
+        "secondary": "#c3c6d5",
+        "outline-variant": "#5b4039",
+        "surface": "#121317",
+        "on-background": "#e3e2e7",
+        "surface-container-highest": "#343439",
+        "surface-container": "#1f1f24",
+        "surface-container-lowest": "#0d0e12",
+        "surface-variant": "#343439",
+        "background": "#121317",
+        "on-surface-variant": "#e4beb4",
+        "primary": "#ffb5a0",
+        "surface-container-high": "#292a2e",
+        "surface-bright": "#38393d",
+        "on-primary": "#5f1500",
+        "primary-container": "#ff5722",
+        "tertiary": "#3de273",
+        "tertiary-container": "#00a74c"
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        full: "0.75rem"
+      },
+      spacing: {
+        "gutter": "1.5rem",
+        "space-xs": "0.5rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem",
+        "space-lg": "1.5rem",
+        "space-xl": "3rem",
+        "space-xxl": "4rem",
+        "margin-mobile": "1rem",
+        "margin": "3rem",
+        "gutter-mobile": "0.75rem"
+      },
+      fontFamily: {
+        "headline-sm": ["Montserrat", "sans-serif"],
+        "headline-md": ["Montserrat", "sans-serif"],
+        "headline-lg": ["Montserrat", "sans-serif"],
+        "headline-xl": ["Montserrat", "sans-serif"],
+        "headline-xl-mobile": ["Montserrat", "sans-serif"],
+        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+        "label-lg": ["Montserrat", "sans-serif"],
+        "label-md": ["Montserrat", "sans-serif"],
+        "label-sm": ["Montserrat", "sans-serif"],
+        "body-sm": ["Hanken Grotesk", "sans-serif"],
+        "body-md": ["Hanken Grotesk", "sans-serif"],
+        "body-lg": ["Hanken Grotesk", "sans-serif"]
+      },
+      fontSize: {
+        "headline-sm": ["1.25rem", { lineHeight: "1.3", letterSpacing: "0.04em", fontWeight: "700" }],
+        "headline-md": ["1.75rem", { lineHeight: "1.25", letterSpacing: "0.01em", fontWeight: "700" }],
+        "headline-lg": ["2.5rem", { lineHeight: "1.15", letterSpacing: "0.02em", fontWeight: "800" }],
+        "headline-xl": ["3.75rem", { lineHeight: "1.05", letterSpacing: "-0.03em", fontWeight: "900" }],
+        "headline-xl-mobile": ["2.25rem", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "900" }],
+        "headline-lg-mobile": ["1.75rem", { lineHeight: "1.2", letterSpacing: "0.01em", fontWeight: "800" }],
+        "label-lg": ["0.875rem", { lineHeight: "1.2", letterSpacing: "0.08em", fontWeight: "800" }],
+        "label-md": ["0.75rem", { lineHeight: "1.2", letterSpacing: "0.1em", fontWeight: "700" }],
+        "label-sm": ["0.6875rem", { lineHeight: "1.15", letterSpacing: "0.12em", fontWeight: "700" }],
+        "body-sm": ["0.875rem", { lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400" }],
+        "body-md": ["1rem", { lineHeight: "1.7", letterSpacing: "0", fontWeight: "400" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.7", letterSpacing: "0", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+</head>
+
+<body class="bg-surface-container-lowest font-body-md text-on-surface antialiased min-h-[100dvh] selection:bg-primary-container selection:text-surface-container-lowest">
+<a class="skip" href="#ana-sayfa">İçeriğe geç</a>
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+  <div class="h-20 max-w-7xl 2xl:max-w-[1600px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+    <a class="flex items-center gap-space-md min-w-0" href="#ana-sayfa" aria-label="Mplus Training Studio — ana sayfa">
+      <img alt="" aria-hidden="true" class="h-8 w-8 object-contain" height="32" width="32" src="assets/img/logo.png">
+      <span class="flex flex-col whitespace-nowrap">
+        <span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface leading-none">Mplus</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Training Studio</span>
+      </span>
+    </a>
+
+    <nav class="hidden 2xl:flex items-center gap-space-lg" aria-label="Ana menü">
+      <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="ana-sayfa" href="#ana-sayfa">Ana Sayfa</a>
+      <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="programlar" href="#programlar">Hizmetler</a>
+      <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="basari" href="#basari">Yorumlar</a>
+      <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="iletisim" href="#iletisim">İletişim</a>
+    </nav>
+
+    <div class="flex items-center gap-space-md">
+      <a class="press fx inline-flex items-center justify-center gap-space-xs w-10 h-10 sm:w-auto sm:h-auto sm:px-space-md sm:py-space-sm rounded-lg bg-[#25D366] hover:bg-[#3ee07b] text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider shadow-[0_4px_16px_rgba(37,211,102,0.3)]" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank" aria-label="WhatsApp ile randevu al">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+        <span class="hidden sm:inline whitespace-nowrap">Randevu Al / İletişim</span>
+      </a>
+      <div class="hidden sm:flex w-8 h-8 rounded-full bg-primary items-center justify-center" aria-hidden="true">
+        <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+      </div>
+      <button class="press fx 2xl:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-panel" aria-label="Menüyü aç">
+        <span class="material-symbols-outlined" id="menu-icon" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile / tablet menu -->
+  <nav class="menu-panel 2xl:hidden absolute left-0 top-20 w-full bg-surface-container-lowest border-t border-outline-variant/40 shadow-[0_16px_32px_rgba(13,14,18,0.8)]" id="menu-panel" aria-label="Mobil menü">
+    <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-md flex flex-col">
+      <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="ana-sayfa" href="#ana-sayfa">Ana Sayfa</a>
+      <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="programlar" href="#programlar">Hizmetler</a>
+      <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="basari" href="#basari">Yorumlar</a>
+      <a class="nav-link fx flex items-center justify-between min-h-[48px] font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="iletisim" href="#iletisim">İletişim</a>
+      <a class="press fx mt-space-md inline-flex items-center justify-center gap-space-xs min-h-[48px] rounded-lg bg-[#25D366] hover:bg-[#3ee07b] text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+        <span>Randevu Al / İletişim</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="w-full pt-20 bg-surface-container-lowest" id="main">
+<div class="flex flex-col w-full">
+
+<!-- HERO -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest -mt-20 pt-28 pb-space-xxl lg:pt-36 lg:pb-24 scroll-mt-20" id="ana-sayfa">
+  <div class="absolute inset-0 z-0 opacity-25 pointer-events-none bg-gradient-to-r from-surface-container-lowest via-transparent to-primary-container/10"></div>
+  <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-container/15 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+    <div class="lg:col-span-7 flex flex-col gap-space-lg min-w-0">
+      <div class="flex flex-wrap items-center gap-space-sm">
+        <span class="inline-flex items-center gap-space-sm px-space-md py-space-sm rounded bg-primary-container/15 text-primary-container font-label-sm text-label-sm uppercase tracking-widest shadow-[0_0_16px_rgba(255,87,34,0.3)]">
+          <span class="material-symbols-outlined text-[14px]" aria-hidden="true">stars</span> Özel Antrenör Eşliğinde
+        </span>
+        <span class="inline-flex items-center px-space-md py-space-sm rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+          Pilates &amp; Fonksiyonel Antrenman
+        </span>
+      </div>
+
+      <h1 class="font-headline-xl text-[clamp(1.75rem,8.4vw,2.25rem)] sm:text-headline-xl-mobile lg:text-headline-xl uppercase text-on-surface tracking-tight leading-[1.1] lg:leading-[1.05]">
+        HEDEFLERİNE ULAŞ,<br>
+        GÜCÜNÜ VE <br>
+        <span class="text-primary-container drop-shadow-[0_4px_24px_rgba(255,87,34,0.5)]">BEDENİNİ DÖNÜŞTÜR</span>
+      </h1>
+
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+        Koşuyolu'ndaki stüdyomuzda kişisel antrenörlük, pilates, fonksiyonel ve kardiyo antrenman veriyoruz. Program kişiye göre hazırlanır.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs">
+        <a class="press fx inline-flex items-center justify-center gap-space-xs px-space-lg sm:px-space-xl py-space-md rounded bg-primary-container hover:bg-[#ff6f43] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider shadow-[0_6px_28px_rgba(255,87,34,0.45)] hover:-translate-y-0.5" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
+          <span>WhatsApp ile Hemen Başla</span>
+        </a>
+        <a class="press fx inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg uppercase tracking-wider" href="#programlar">
+          <span>Programları İncele</span>
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_downward</span>
+        </a>
+      </div>
+
+      <!-- Quick stats strip -->
+      <div class="grid grid-cols-3 gap-space-sm sm:gap-space-md mt-space-md bg-surface-container-low/70 rounded-xl p-space-md">
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm sm:font-headline-md text-[1.125rem] sm:text-headline-md text-primary-container font-black leading-tight">Kişiye Özel</span>
+          <span class="font-body-sm text-body-sm text-on-secondary-container">Program</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm sm:font-headline-md text-[1.125rem] sm:text-headline-md text-on-surface font-black leading-tight">Vücut Analizi</span>
+          <span class="font-body-sm text-body-sm text-on-secondary-container">Başlangıç Ölçümü</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm sm:font-headline-md text-[1.125rem] sm:text-headline-md text-tertiary font-black leading-tight">Birebir</span>
+          <span class="font-body-sm text-body-sm text-on-secondary-container">Eğitmenle Çalışma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative">
+      <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-[0_24px_48px_rgba(255,87,34,0.12),0_8px_16px_rgba(0,0,0,0.5)] bg-surface-container">
+        <img alt="Koyu tonlu butik stüdyoda battle rope ile fonksiyonel antrenman yapan sporcu kadın" class="w-full h-full object-cover" fetchpriority="high" height="600" width="480" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7sOIQOn3Vzh0hBGPPli7C0TygaAld7dkmPHFo-r7dxJvNMLKLYFY6W0bJeinXW4ysjSZ27xZdxFkp3sRbFKO8d3Itw5vi18AmO0HKmSlfQeNlnOxTcsreMlIkTMWZojTamq_-ga2XAtCkpUdSgtXBo7hfM-4OCdHR-MlxcjJ1xZRWYZdhLbX5JLyfBQbGZNXmSOyJd70DV5Nx2nfgxd9WPVZp54fo9UG4UZytsbjZas6ZZyWrowXJ">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-space-md sm:bottom-space-lg left-space-md sm:left-space-lg right-space-md sm:right-space-lg p-space-md rounded-lg bg-surface-container-lowest/85 backdrop-blur-md flex items-center justify-between gap-space-md shadow-lg">
+          <div class="flex items-center gap-space-md min-w-0">
+            <div class="w-10 h-10 shrink-0 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">fitness_center</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-md text-label-md uppercase text-on-surface">Potansiyelini Keşfet</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Ölçümlenebilir Fiziksel Değişim</span>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-primary-container shrink-0" aria-hidden="true">arrow_forward</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMLAR -->
+<section class="w-full py-space-xxl bg-surface-container-lowest relative scroll-mt-20" id="programlar">
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+      <div class="flex flex-col gap-space-xs">
+        <div class="flex items-center gap-space-sm text-primary-container font-label-md text-label-md uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-primary-container" aria-hidden="true"></span>
+          <span>Antrenmanını Seç</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg uppercase text-on-surface font-extrabold tracking-wide">PROGRAMLARIMIZ</h2>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Program hedefe ve mevcut duruma göre hazırlanır; hazır bir şablon kullanılmaz.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg items-stretch">
+      <!-- Card 1 -->
+      <article class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low fx hover:shadow-[0_12px_36px_rgba(255,87,34,0.12),0_4px_12px_rgba(0,0,0,0.5)] hover:-translate-y-1">
+        <div class="relative w-full h-56 sm:h-64 overflow-hidden bg-surface-container">
+          <img alt="Karanlık, yüksek kontrastlı stüdyoda dumbbell kaldıran kaslı sporcu" class="w-full h-full object-cover fx group-hover:scale-105" loading="lazy" decoding="async" height="256" width="400" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPMakrzN-Co5GXyf788QTqh-KnndbdoFiunlbZOaasutd2VyF9EcUex4j6PSEDZu3yXeQR3enNZsIOKTWwJvu2sxcd35U7K9KmYH4GGx6TZpvLT9-iZhz_qrXMaZVCqbjqjJ7bwkt-ATpG_ZvtHxKJB2R3FUC_HjKhHug6ZnM14VU-e2XiF89hw4QatBkg0Bo-C5aKxfo8MpxOTYE_zDp63Fsp9OgaDthK86Dvt8Ke2Rj6olZxd_JJ">
+          <span class="absolute top-space-md left-space-md font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-space-sm rounded bg-surface-container-lowest/80 backdrop-blur-md text-on-surface">Birebir</span>
+        </div>
+        <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md bg-surface-container-low">
+          <div class="flex flex-col gap-space-xs">
+            <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">KİŞİSEL ANTRENÖRLÜK</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Eğitmenle birebir çalışılır. Program hedefe göre kurulur; teknik, tempo ve yük kişiye özel belirlenir.</p>
+          </div>
+          <a class="press fx inline-flex items-center justify-between w-full min-h-[48px] px-space-md rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md uppercase tracking-wider" href="https://wa.me/905546018795?text=Merhaba%2C%20ki%C5%9Fisel%20antren%C3%B6rl%C3%BCk%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+            <span>WhatsApp ile Bilgi Al</span>
+            <span class="material-symbols-outlined text-[18px] text-primary-container" aria-hidden="true">arrow_forward</span>
+          </a>
+        </div>
+        <div class="h-1 w-full bg-surface-container-highest"></div>
+      </article>
+
+      <!-- Card 2 (featured) -->
+      <article class="group flex flex-col rounded-xl overflow-hidden bg-surface-container shadow-[0_8px_32px_rgba(255,87,34,0.22)] md:-mt-4 fx hover:shadow-[0_16px_40px_rgba(255,87,34,0.35)] hover:-translate-y-1">
+        <div class="relative w-full h-64 sm:h-72 overflow-hidden bg-surface-container">
+          <img alt="Turuncu vurgu ışıklı enerjik stüdyoda kettlebell ile çalışan sporcu kadın" class="w-full h-full object-cover fx group-hover:scale-105" loading="lazy" decoding="async" height="288" width="400" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBHgnxNEPPqpVpMnnRfnNVwyXmlTuRdL45sXQdObsFocfxSSMxwtCbTedVdnwxFXPdeZB4CdSD7YbbPvCJ6BFZaDep1imK1ESj-lnPeMbfHMwcYdC28mjEtggwxSEoD7rWBciouHtwTJRRWMhVajO31TuZXpFJ0olCWY-rvWMbed_WK5BdzqXrB2YqnGvpGVJ_9V3CCaOthhryj2b47vnQtsfCQ7esw0s_ZhUiMlJgDZTM2g_x84c">
+          <span class="absolute top-space-md left-space-md font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-space-sm rounded bg-primary-container text-surface-container-lowest shadow-md">Kardiyo Dahil</span>
+        </div>
+        <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md bg-surface-container">
+          <div class="flex flex-col gap-space-xs">
+            <h3 class="font-headline-sm text-headline-sm uppercase text-primary-container tracking-wider">FONKSİYONEL &amp; KARDİYO</h3>
+            <p class="font-body-sm text-body-sm text-on-surface">Güç ve dayanıklılık çalışmasıdır; kardiyovasküler kapasiteyi de içerir.</p>
+          </div>
+          <a class="press fx inline-flex items-center justify-between w-full min-h-[48px] px-space-md rounded bg-primary-container hover:bg-[#ff6f43] text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider shadow-[0_4px_16px_rgba(255,87,34,0.35)]" href="https://wa.me/905546018795?text=Merhaba%2C%20fonksiyonel%20ve%20kardiyo%20antrenman%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+            <span>Hemen Seans Ayırt</span>
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">bolt</span>
+          </a>
+        </div>
+        <div class="h-2 w-full bg-primary-container"></div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low fx hover:shadow-[0_12px_36px_rgba(255,87,34,0.12),0_4px_12px_rgba(0,0,0,0.5)] hover:-translate-y-1">
+        <div class="relative w-full h-56 sm:h-64 overflow-hidden bg-surface-container">
+          <img alt="Modern butik stüdyoda ahşap reformer üzerinde core egzersizi yapan kadın" class="w-full h-full object-cover fx group-hover:scale-105" loading="lazy" decoding="async" height="256" width="400" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDap9grgaVWUFkNSEBpy4K1FVLlff0kG9grCWG0_tmA8gs9u5rNXAhGJz47QU_jDwMrmduL5EWlpklNN9m6Q_4xhxXuIqSiq4JlOknhOxFJ7HJ2E9M5c-SnYs4kcvnM8HeeTp0lbjuP2odz4v84qg8hQr55tHE5IderxSHNEOZnlzk5gcYEyucDgZDwFUMlCsuD385fTGEnhSrGawfPeG56HJANl-8zDj9UVYZeFFszytI9yC09dFvE">
+          <span class="absolute top-space-md left-space-md font-label-sm text-label-sm uppercase tracking-wider px-space-sm py-space-sm rounded bg-surface-container-lowest/80 backdrop-blur-md text-on-surface">Grup ya da Birebir</span>
+        </div>
+        <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md bg-surface-container-low">
+          <div class="flex flex-col gap-space-xs">
+            <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PİLATES</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Duruş, nefes ve kontrol üzerine kurulu çalışma. Grup ya da birebir olarak alınabilir.</p>
+          </div>
+          <a class="press fx inline-flex items-center justify-between w-full min-h-[48px] px-space-md rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md uppercase tracking-wider" href="https://wa.me/905546018795?text=Merhaba%2C%20pilates%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+            <span>WhatsApp ile Bilgi Al</span>
+            <span class="material-symbols-outlined text-[18px] text-primary-container" aria-hidden="true">arrow_forward</span>
+          </a>
+        </div>
+        <div class="h-1 w-full bg-surface-container-highest"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ÜYE YORUMU -->
+<section class="w-full py-space-xxl bg-surface-container-low relative scroll-mt-20" id="basari">
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+    <div class="lg:col-span-4 flex flex-col gap-space-xs">
+      <div class="flex items-center gap-space-sm text-primary-container font-label-md text-label-md uppercase tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-primary-container" aria-hidden="true"></span>
+        <span>Üye Yorumu</span>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg uppercase text-on-surface font-extrabold tracking-wide">ÜYELERİMİZ NE DİYOR</h2>
+    </div>
+
+    <figure class="lg:col-span-8 m-0 flex flex-col gap-space-lg rounded-xl bg-surface-container p-space-lg lg:p-space-xl shadow-[0_8px_24px_rgba(0,0,0,0.4)] border-l-4 border-primary-container">
+      <span class="material-symbols-outlined text-primary-container text-5xl" aria-hidden="true">format_quote</span>
+      <blockquote class="m-0 font-body-md text-[1.375rem] lg:text-[1.75rem] leading-snug text-on-surface italic">
+        “Profesyonel anlamda spor. Murat hoca benim gibi bir tembeli bile spora alıştırdı.”
+      </blockquote>
+      <figcaption class="font-label-lg text-label-lg text-on-surface uppercase">Can Ş.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- FİNAL CTA -->
+<section class="w-full py-space-xxl relative overflow-hidden bg-surface-container-low scroll-mt-20" id="iletisim">
+  <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-low opacity-90 pointer-events-none"></div>
+  <div class="absolute -left-32 -bottom-32 w-80 h-80 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-margin-mobile lg:px-margin relative z-10 text-center flex flex-col items-center gap-space-lg">
+    <span class="inline-flex items-center gap-space-sm px-space-md py-space-sm rounded bg-primary-container/20 text-primary-container font-label-sm text-label-sm uppercase tracking-widest">
+      <span class="material-symbols-outlined text-[16px]" aria-hidden="true">location_on</span> Koşuyolu, Kadıköy
+    </span>
+    <h2 class="font-headline-xl text-[clamp(1.75rem,8.4vw,2.25rem)] sm:text-headline-xl-mobile lg:text-headline-xl uppercase text-on-surface tracking-tight leading-[1.1] lg:leading-[1.05]">
+      SEN DE ARAMIZA KATIL<br>
+      <span class="text-primary-container drop-shadow-[0_4px_24px_rgba(255,87,34,0.45)]">DEĞİŞİMİ BİRLİKTE BAŞLATALIM</span>
+    </h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+      Uygun saat ve program için WhatsApp'tan yazabilir ya da telefonla ulaşabilirsiniz. Program türüne göre saatler değişebilir; güncel uygunluk için bize yazın.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md w-full justify-center pt-space-xs">
+      <a class="press fx w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg sm:px-space-xl py-space-md rounded bg-primary-container hover:bg-[#ff6f43] text-surface-container-lowest font-label-lg text-label-lg uppercase tracking-wider shadow-[0_6px_28px_rgba(255,87,34,0.45)] hover:-translate-y-0.5" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20randevu%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
+        <span>WhatsApp'tan Randevu Al</span>
+      </a>
+      <a class="press fx w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-lg text-label-lg uppercase tracking-wider" href="https://www.google.com/maps/search/?api=1&amp;query=Mplus%20Training%20Studio%20Ko%C5%9Fuyolu%20Kad%C4%B1k%C3%B6y" rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[20px] text-primary" aria-hidden="true">pin_drop</span>
+        <span>Stüdyomuzu Ziyaret Et</span>
+      </a>
+    </div>
+
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xl mt-space-md border-t border-outline-variant/40 text-left">
+      <div class="flex items-center gap-space-md p-space-sm">
+        <div class="w-10 h-10 shrink-0 rounded bg-surface-container-high flex items-center justify-center text-primary-container" aria-hidden="true">
+          <span class="material-symbols-outlined">call</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Hızlı İletişim</span>
+          <a class="font-label-md text-label-md text-on-surface hover:text-primary fx" href="tel:+905546018795">0554 601 87 95</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md p-space-sm">
+        <div class="w-10 h-10 shrink-0 rounded bg-surface-container-high flex items-center justify-center text-primary-container" aria-hidden="true">
+          <span class="material-symbols-outlined">photo_camera</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Bizi Takip Edin</span>
+          <a class="font-label-md text-label-md text-on-surface hover:text-primary fx break-all" href="https://instagram.com/mplus_trainingstudio" rel="noopener noreferrer" target="_blank">@mplus_trainingstudio</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md p-space-sm">
+        <div class="w-10 h-10 shrink-0 rounded bg-surface-container-high flex items-center justify-center text-primary-container" aria-hidden="true">
+          <span class="material-symbols-outlined">location_on</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Stüdyo</span>
+          <span class="font-label-md text-label-md text-on-surface">Koşuyolu, Kadıköy / İstanbul</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low shadow-[0_-1px_12px_rgba(0,0,0,0.4)]">
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-xxl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <span class="font-headline-md text-headline-md uppercase tracking-wider text-on-surface">Mplus</span>
+          <span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded bg-primary-container/20 text-primary-container uppercase font-bold tracking-widest">Training Studio</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Koşuyolu, Kadıköy'de kişisel antrenörlük, pilates, fonksiyonel ve kardiyo antrenman.</p>
+        <div class="flex items-center gap-space-sm mt-space-xs">
+          <a class="press fx inline-flex items-center gap-space-xs min-h-[40px] px-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-sm text-label-sm" href="https://instagram.com/mplus_trainingstudio" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[16px] text-primary-container" aria-hidden="true">photo_camera</span>
+            <span>@mplus_trainingstudio</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Hızlı Menü</span>
+        <div class="flex flex-col">
+          <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#ana-sayfa">Ana Sayfa</a>
+          <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#programlar">Hizmetler</a>
+          <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#basari">Üye Yorumu</a>
+          <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#iletisim">İletişim &amp; Konum</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Randevu</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Program türüne göre saatler değişebilir; güncel uygunluk için WhatsApp'tan yazın ya da arayın.</p>
+      </div>
+
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface">Stüdyo &amp; İletişim</span>
+        <div class="flex items-start gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px] text-primary-container" aria-hidden="true">location_on</span>
+          <span>Koşuyolu Mah. Koşuyolu Cd. Nazlı Sk.<br>Karlıdağ Apt No:1 D:2<br>34718 Kadıköy / İstanbul</span>
+        </div>
+        <div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px] text-primary-container" aria-hidden="true">call</span>
+          <a class="fx hover:text-primary" href="tel:+905546018795">0554 601 87 95</a>
+        </div>
+        <div class="mt-space-xs">
+          <a class="press fx inline-flex items-center gap-space-xs min-h-[40px] px-space-md rounded-lg bg-[#25D366] hover:bg-[#3ee07b] text-surface-container-lowest font-label-md text-label-md shadow-[0_4px_16px_rgba(37,211,102,0.25)]" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[16px]" aria-hidden="true">forum</span>
+            <span>WhatsApp'tan Yazın</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md bg-surface-container-highest/20 rounded-xl p-space-md">
+      <p class="font-body-sm text-body-sm text-on-secondary-container">© 2026 Mplus Training Studio. Tüm hakları saklıdır.</p>
+      <div class="flex flex-wrap items-center gap-x-space-lg font-label-sm text-label-sm text-on-secondary-container">
+        <a class="fx inline-flex items-center min-h-[40px] hover:text-on-surface" href="gizlilik.html">Gizlilik ve KVKK</a>
+        <a class="fx inline-flex items-center min-h-[40px] hover:text-on-surface" href="cerez-politikasi.html">Çerez Politikası</a>
+        <a class="fx inline-flex items-center min-h-[40px] hover:text-on-surface" href="kullanim-kosullari.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var panel = document.getElementById('menu-panel');
+  var icon = document.getElementById('menu-icon');
+
+  function setMenu(open) {
+    panel.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    icon.textContent = open ? 'close' : 'menu';
+  }
+  btn.addEventListener('click', function () { setMenu(!panel.classList.contains('is-open')); });
+  panel.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); btn.focus(); } });
+  window.matchMedia('(min-width: 1536px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
+
+  // Scroll-spy: mark the nav link of the section in view
+  var ids = ['ana-sayfa', 'programlar', 'basari', 'iletisim'];
+  var links = document.querySelectorAll('.nav-link');
+  function mark(id) {
+    links.forEach(function (a) {
+      if (a.dataset.spy === id) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  mark('ana-sayfa');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) mark(en.target.id); });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
