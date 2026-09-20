@@ -168,7 +168,6 @@ tailwind.config = {
     <nav class="hidden 2xl:flex items-center gap-space-lg" aria-label="Ana menü">
       <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="ana-sayfa" href="#ana-sayfa">Ana Sayfa</a>
       <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="programlar" href="#programlar">Hizmetler</a>
-      <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="basari" href="#basari">Yorumlar</a>
       <a class="nav-link whitespace-nowrap font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface fx" data-spy="iletisim" href="#iletisim">İletişim</a>
     </nav>
 
@@ -191,7 +190,6 @@ tailwind.config = {
     <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin py-space-md flex flex-col">
       <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="ana-sayfa" href="#ana-sayfa">Ana Sayfa</a>
       <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="programlar" href="#programlar">Hizmetler</a>
-      <a class="nav-link fx flex items-center justify-between min-h-[48px] border-b border-outline-variant/30 font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="basari" href="#basari">Yorumlar</a>
       <a class="nav-link fx flex items-center justify-between min-h-[48px] font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-on-surface" data-spy="iletisim" href="#iletisim">İletişim</a>
       <a class="press fx mt-space-md inline-flex items-center justify-center gap-space-xs min-h-[48px] rounded-lg bg-[#25D366] hover:bg-[#3ee07b] text-surface-container-lowest font-label-md text-label-md uppercase tracking-wider" href="https://wa.me/905546018795?text=Merhaba%2C%20Mplus%20Training%20Studio%27dan%20bilgi%20almak%20istiyorum." rel="noopener noreferrer" target="_blank">
         <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
@@ -356,23 +354,14 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ÜYE YORUMU -->
-<section class="w-full py-space-xxl bg-surface-container-low relative scroll-mt-20" id="basari">
-  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
-    <div class="lg:col-span-4 flex flex-col gap-space-xs">
-      <div class="flex items-center gap-space-sm text-primary-container font-label-md text-label-md uppercase tracking-widest">
-        <span class="w-2 h-2 rounded-full bg-primary-container" aria-hidden="true"></span>
-        <span>Üye Yorumu</span>
-      </div>
-      <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg uppercase text-on-surface font-extrabold tracking-wide">ÜYELERİMİZ NE DİYOR</h2>
-    </div>
-
-    <figure class="lg:col-span-8 m-0 flex flex-col gap-space-lg rounded-xl bg-surface-container p-space-lg lg:p-space-xl shadow-[0_8px_24px_rgba(0,0,0,0.4)] border-l-4 border-primary-container">
-      <span class="material-symbols-outlined text-primary-container text-5xl" aria-hidden="true">format_quote</span>
-      <blockquote class="m-0 font-body-md text-[1.375rem] lg:text-[1.75rem] leading-snug text-on-surface italic">
+<!-- ÜYE YORUMU (tek gerçek alıntı, kompakt) -->
+<section class="w-full pb-space-xxl bg-surface-container-lowest">
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+    <figure class="m-0 border-l-[3px] border-primary-container pl-space-lg">
+      <blockquote class="m-0 max-w-[42ch] font-headline-sm text-[clamp(1.25rem,2.6vw,1.75rem)] font-bold leading-snug tracking-normal text-on-surface">
         “Profesyonel anlamda spor. Murat hoca benim gibi bir tembeli bile spora alıştırdı.”
       </blockquote>
-      <figcaption class="font-label-lg text-label-lg text-on-surface uppercase">Can Ş.</figcaption>
+      <figcaption class="mt-space-md font-body-sm text-body-sm text-on-surface-variant"><b class="font-semibold text-on-surface">Can Ş.</b></figcaption>
     </figure>
   </div>
 </section>
@@ -463,7 +452,6 @@ tailwind.config = {
         <div class="flex flex-col">
           <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#ana-sayfa">Ana Sayfa</a>
           <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#programlar">Hizmetler</a>
-          <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#basari">Üye Yorumu</a>
           <a class="fx inline-flex items-center min-h-[40px] font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#iletisim">İletişim &amp; Konum</a>
         </div>
       </div>
@@ -521,7 +509,7 @@ tailwind.config = {
   window.matchMedia('(min-width: 1536px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
 
   // Scroll-spy: mark the nav link of the section in view
-  var ids = ['ana-sayfa', 'programlar', 'basari', 'iletisim'];
+  var ids = ['ana-sayfa', 'programlar', 'iletisim'];
   var links = document.querySelectorAll('.nav-link');
   function mark(id) {
     links.forEach(function (a) {
